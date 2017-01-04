@@ -1,0 +1,15 @@
+{
+  "name": "bike",
+  "version": "1.0.0",
+  "description": "bike Index",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bike_index"
+  },
+  "author": "Kevin Finley & Bryant Wang",
+  "license": "MIT"
+}
