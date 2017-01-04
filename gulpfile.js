@@ -7,7 +7,17 @@ var utilities = require('gulp-util');
 var del = require('del');
 var jshint = require('gulp-jshint');
 var moment = require('moment');
-var lib = require('bower-files');
+var lib = require('bower-files')({
+  "overrides":{
+    "bootstrap" : {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+});
 var browserSync = require('browser-sync').create();
 var buildProduction = utilities.env.production;
 
@@ -47,9 +57,10 @@ gulp.task('build', ['clean'], function() {
     gulp.start('jsBrowserify');
   }
   gulp.start('bower');
+  gulp.start('cssBuild');
 });
 
-gulp.task('bowerJS', function() {
+gulp.task('jsBower', function() {
   return gulp.src(lib.ext('js').files)
     .pipe(concat('vendor.min.js'))
     .pipe(uglify())
@@ -62,7 +73,7 @@ gulp.task('bowerCSS', function() {
     .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('bower', ['bowerJS', 'bowerCSS']);
+gulp.task('bower', ['jsBower', 'bowerCSS']);
 
 gulp.task('serve', function() {
   browserSync.init({

@@ -3,15 +3,25 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="build/css/vendor.css">
+    <script src="build/js/vendor.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="build/css/app.css">
+    <script src="build/js/app.js" type="text/javascript"></script>
     <title>Bike Index</title>
   </head>
   <body>
     <div class="container">
       <div class="input-group">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Go!</button>
-        </span>
-        <input type="text" class="form-control" placeholder="Search Here">
+        <h3>Search for bikes stolen since: </h3>
+        <input type="date" class="form-control" placeholder="Date Here" id="stolen-date" pattern="\d{2}/\d{2}/\d{4}" required autofocus>
+      </div>
+      <div class="input-group">
+        <h3>Within </h3>
+        <input type="number" class="form-control" placeholder="10" id="location-radius" value="10" required>
+        <h3> miles(?) of your location.</h3>
+        <button class="btn btn-default" type="button" id="stolen-search">Search</button>
+      </div>
+      <div id="result-display">
+
       </div>
     </div>
   </body>
