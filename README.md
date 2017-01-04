@@ -6,7 +6,7 @@
 
 ## Description
 
-This app will use an [API](https://bikeindex.org/documentation/api_v3) bike shit.
+This app will use an [API](https://bikeindex.org/documentation/api_v3) to find bike statistics.
 
 ## Setup/Installation Requirements
 
