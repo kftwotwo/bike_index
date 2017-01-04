@@ -1,14 +1,17 @@
-var StolenSearch = require("./../js/stolensearch.js").stolenSearchModule;
+var BikeStuff = require("./../js/bikeStuff.js").bikeStuffModule;
 
 $(function() {
-  $("#stolen-search").click(function() {
+  $("#stolen-search").submit(function(event) {
+    event.preventDefault();
     console.log("button clicked");
-    var stolenDate = $("#stolen-date").val();
+    var originDate = $("#origin-date").val();
     var locationRadius = $("#location-radius").val();
-    $("#stolen-date").val("");
+    $("#origin-date").val("");
     $("#location-radius").val("");
 
-    var newSearch = new StolenSearch();
-    newSearch.search(locationRadius);
+    var originDateObj = new Date(originDate);
+
+    var newSearch = new BikeStuff();
+    newSearch.stolenSearch(locationRadius, originDateObj);
   });
 });
