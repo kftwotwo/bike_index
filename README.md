@@ -10,6 +10,8 @@ This app will use an [API](https://bikeindex.org/documentation/api_v3) to find b
 
 ## Setup/Installation Requirements
 
+***Note if you are using chrome you will need Allow-Control-Allow-Origin extension click [here](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en)***
+
 Clone the repository and `cd` into your directory:
 ```
 $ npm install
@@ -17,7 +19,9 @@ $ npm install gulp -g
 $ npm install bower -g
 $ bower install
 $ gulp build
+$ gulp serve
 ```
+
 ## Known Bugs
 
 If you notice any bugs or problems you can fill out an issue [here](http://www.github.com/kftwotwo/bike_index/issue) or feel free to submit a pull request.
