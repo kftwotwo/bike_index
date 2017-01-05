@@ -6,9 +6,10 @@ BikeStuff.prototype.stolenSearch = function(locationRadius, originDate) {
     this.storedResponse = response;
 
     response.bikes.forEach(function(bike) {
-      var stolenDate = new Date(bike.date_stolen);
+      console.log("raw date stolen: " + bike.date_stolen);
+      var stolenDate = new Date(parseInt(bike.date_stolen + "000"));
       if(stolenDate > originDate) {
-        $("#result-display").append("<li>" + bike.title + " " + stolenDate.toDateString() + "</li>")
+        $("#result-display").append("<li>" + bike.title + ", " + stolenDate.toDateString() + "</li>")
       }
     });
   }).fail(function(error) {

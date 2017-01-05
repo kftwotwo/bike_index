@@ -7,7 +7,6 @@ $(function() {
     var originDate = $("#origin-date").val();
     var locationRadius = $("#location-radius").val();
     $("#origin-date").val("");
-    $("#location-radius").val("");
 
     var originDateObj = new Date(originDate);
 
