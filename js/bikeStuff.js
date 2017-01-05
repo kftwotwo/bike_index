@@ -23,7 +23,6 @@ BikeStuff.prototype.stolenSearch = function(locationRadius, originDate) {
         notEmpty = false;
       }
     });
-
     showButton = function() {
       if(whatPage <= 1) {
         $("#previous-page").hide();

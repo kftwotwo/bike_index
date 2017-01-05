@@ -1,6 +1,12 @@
 var BikeStuff = require("./../js/bikeStuff.js").bikeStuffModule;
+var apiKey = require('./../.env').apiKey;
 
 $(function() {
+  var googleApi = document.createElement("script");
+  googleApi.type = "text/javascript";
+  googleApi.src = "https://maps.googleapis.com/maps/api/js?key=" + apiKey + "&callback=initMap";
+  $("head").append(googleApi);
+
   var newSearch = new BikeStuff();
   var locationRadius = "";
   var originDateObj = new Date();
