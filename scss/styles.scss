@@ -1,3 +1,19 @@
 #page-buttons {
   display: none;
+  text-align: center;
+  button {
+    margin: 0px 10px 0px 10px;
+    font-size: 20px;
+  }
+}
+
+.inline-flexer {
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+}
+
+ol {
+  text-align: center;
+  list-style: none;
 }

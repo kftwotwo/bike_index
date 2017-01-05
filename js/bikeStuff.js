@@ -3,6 +3,7 @@ function BikeStuff() {
 }
 
 BikeStuff.prototype.stolenSearch = function(locationRadius, originDate) {
+  $("#page-buttons h5").text("Page Number: " + this.currentPage);
   $.get("https://bikeindex.org/api/v3/search?page=" + this.currentPage + "&per_page=25&location=IP&distance=" + locationRadius + "&stolenness=stolen").then(function(response) {
     this.storedResponse = response;
 

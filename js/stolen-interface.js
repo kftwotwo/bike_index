@@ -17,6 +17,7 @@ $(function() {
     $("#page-buttons").show();
     $("#previous-page").hide();
     $("#next-page").show();
+    newSearch.currentPage = 1;
     newSearch.stolenSearch(locationRadius, originDateObj);
   });
 
