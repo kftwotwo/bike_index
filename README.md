@@ -21,7 +21,7 @@ $ bower install
 $ gulp build
 $ gulp serve
 ```
-
+* Get an API key for the Google Maps API and save it in a `.env` file at the top level of the project folder, with this line: `exports.apiKey = "YOUR_KEY_HERE";`
 ## Known Bugs
 
 If you notice any bugs or problems you can fill out an issue [here](http://www.github.com/kftwotwo/bike_index/issues) or feel free to submit a pull request.

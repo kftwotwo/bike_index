@@ -29,4 +29,13 @@ $(function() {
     newSearch.pageTurn(true);
     newSearch.stolenSearch(locationRadius, originDateObj);
   });
+
 });
+
+var map;
+initMap = function() {
+map = new google.maps.Map(document.getElementById("map"), {
+  center: {lat: 45.521, lng: -122.678},
+  zoom: 14
+});
+}
