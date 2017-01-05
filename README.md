@@ -15,6 +15,7 @@ Clone the repository and `cd` into your directory:
 $ npm install
 $ npm install gulp -g
 $ npm install bower -g
+$ bower install
 $ gulp build
 ```
 ## Known Bugs
