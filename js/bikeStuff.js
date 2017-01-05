@@ -3,17 +3,42 @@ function BikeStuff() {
 }
 
 BikeStuff.prototype.stolenSearch = function(locationRadius, originDate) {
-  $("#page-buttons h5").text("Page Number: " + this.currentPage);
-  $.get("https://bikeindex.org/api/v3/search?page=" + this.currentPage + "&per_page=25&location=IP&distance=" + locationRadius + "&stolenness=stolen").then(function(response) {
-    this.storedResponse = response;
+  var whatPage = this.currentPage;
+  var notEmpty = true;
+
+  $("#next-page").hide();
+  $("#previous-page").hide();
+  $("#result-display ol").empty();
+  $("#result-display ol").append("<li>Processing Request...</li>");
+  $("#page-buttons h5").text("Page Number: " + whatPage);
+  $.get("https://bikeindex.org/api/v3/search?page=" + whatPage + "&per_page=25&location=IP&distance=" + locationRadius + "&stolenness=stolen").then(function(response) {
+    $("#result-display ol").empty();
 
     response.bikes.forEach(function(bike) {
-      console.log("raw date stolen: " + bike.date_stolen);
       var stolenDate = new Date(parseInt(bike.date_stolen + "000"));
       if(stolenDate > originDate) {
+        notEmpty = true;
         $("#result-display ol").append("<li>" + bike.title + ", " + stolenDate.toDateString() + "</li>");
+      } else {
+        notEmpty = false;
       }
     });
+
+    showButton = function() {
+      if(whatPage <= 1) {
+        $("#previous-page").hide();
+      } else {
+        $("#previous-page").show();
+      }
+    }
+
+  }).then(function() {
+    if(!notEmpty) {
+      $("#result-display ol").append("<div id=\"center-flexer\"><div id=\"ending-border\"></div></div><li id=\"result-ender\">--No more results to display--</li>");
+    } else {
+      $("#next-page").show();
+    }
+    showButton();
   }).fail(function(error) {
     $('.showWeather').text(error.responseJSON.message);
   });
