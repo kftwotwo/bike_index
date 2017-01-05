@@ -6,7 +6,7 @@
     "Kevin Finley & Bryant Wang"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/kftwotwo/bike_index",
   "ignore": [
     "**/.*",
     "node_modules",
