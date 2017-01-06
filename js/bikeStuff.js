@@ -29,7 +29,7 @@ BikeStuff.prototype.stolenSearch = function(locationRadius, originDate) {
       } else {
         $("#previous-page").show();
       }
-    }
+    };
 
   }).then(function() {
     if(!notEmpty) {

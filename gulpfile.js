@@ -109,7 +109,7 @@ gulp.task('htmlBuild', function(){
 
 gulp.task('bowerBuild', ['bower'], function() {
   browserSync.reload();
-})
+});
 
 gulp.task('stream', ['build'], function() {
   return gulp.watch('js/**/*.js', ['build'])
