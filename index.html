@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
+  <head id="header">
     <link rel="stylesheet" href="build/css/vendor.css">
     <script src="build/js/vendor.min.js" type="text/javascript"></script>
-    <!-- <link rel="stylesheet" href="build/css/app.css"> -->
+    <link rel="stylesheet" href="build/css/styles.css">
     <script src="build/js/app.js" type="text/javascript"></script>
-    <title>Bike Index</title>
+
+    <title>Bike Index Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
   </head>
   <body>
     <div class="container">
       <form id="stolen-search">
         <div class="input-group">
           <h3>Search for bikes stolen since: </h3>
-          <input type="date" class="form-control" placeholder="Date Here" id="origin-date" pattern="\d{2}/\d{2}/\d{4}" autofocus>
+          <input type="date" class="form-control" placeholder="Date Here" id="origin-date" pattern="\d{2}/\d{2}/\d{4}" required autofocus>
         </div>
         <div class="input-group">
           <h3>Within </h3>
           <input type="number" class="form-control" placeholder="10" id="location-radius" value="10" required>
-          <h3> miles(?) of your location.</h3>
+          <h3> miles of your location.</h3>
         </div>
         <button class="btn btn-default" type="submit">Search</button>
       </form>
+      <div id="page-buttons">
+        <div class="inline-flexer">
+          <button type="button" id="previous-page" class="btn btn-default">&#8592;</button>
+          <h5></h5>
+          <button type="button" id="next-page" class="btn btn-default">&#8594;</button>
+        </div>
+      </div>
       <div id="result-display">
+        <ol>
 
+        </ol>
       </div>
     </div>
+    <!-- <div id="map-container"> -->
+      <div id="map"></div>
+    <!-- </div> -->
   </body>
 </html>
