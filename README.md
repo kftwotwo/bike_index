@@ -27,7 +27,14 @@ $ gulp serve
 If you notice any bugs or problems you can fill out an issue [here](http://www.github.com/kftwotwo/bike_index/issues) or feel free to submit a pull request.
 
 ## Contact details
-Here is Kevin's: kf.two.two@gmail.com and Bryant: bryant.m.wang@gmail.com
+To contact us here are our emails
+```
+ Kevin's: kf.two.two@gmail.com
+ Bryant: bryant.m.wang@gmail.com
+```
+
+## Contribute
+If you wish to contribute create an issue and describe your idea then fork it and submit a pull request!
 
 ## Technologies Used
 ```
